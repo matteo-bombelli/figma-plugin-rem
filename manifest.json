@@ -1,0 +1,7 @@
+{
+  "name": "em_rem_sizes",
+  "id": "983392626640212794",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html"
+}
