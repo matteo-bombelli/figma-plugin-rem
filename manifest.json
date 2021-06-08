@@ -3,5 +3,8 @@
   "id": "983392626640212794",
   "api": "1.0.0",
   "main": "dist/code.js",
-  "ui": "dist/ui.html"
+  "ui": {
+    "main":"dist/ui.html",
+    "about":"dist/about.html"
+  }
 }

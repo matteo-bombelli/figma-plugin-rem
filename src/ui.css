@@ -1,4 +1,4 @@
-body {
+/* body {
     font: 12px sans-serif;
     text-align: center;
     margin: 20px;
@@ -41,4 +41,11 @@ button:focus {
 
 input:focus {
     box-shadow: inset 0 0 0 2px #18A0FB;
+} */
+
+body {
+    font: 12px sans-serif;
+    text-align: center;
+    margin: 20px;
 }
+

@@ -1,5 +1,6 @@
 import React from "react";
-import { keyTocssValue } from "./../../../utils/jsToCss"
+import { keyTocssValue } from "./../../../utils/jsToCss";
+import "./ValuesAndData.less";
 
 export const cssValuesStrings = ({
     keyb,
@@ -8,8 +9,8 @@ export const cssValuesStrings = ({
     type,
     name,
     version
-})=>`
-    ${keyTocssValue(keyb)}: ${pxValue} px;
+})=>""+
+`    ${keyTocssValue(keyb)}: ${pxValue} px;
     ${keyTocssValue(keyb)}: ${emValue} rem;
 `
 
@@ -20,25 +21,31 @@ export const ValuesAndData = ({
 })=>{
     return (
         <div 
+            className="ValuesAndData"
             style={{textAlign:"left"}}
         >
-            <div>
+            <div 
+                className="ValuesAndData_id"
+            >
                 <strong>
                     {`id: ${id}`}
                 </strong>
             </div>
-            <div>
+            <div
+                className="ValuesAndData_name"
+            >
                 {`name: ${name}`}
             </div>
-            <code>
+            <code
+                className="ValuesAndData_code"
+            >
                 <pre>
                     {`${values
                         .map(el=>cssValuesStrings({
                             ...el, 
                             keyb:el.key
                         }))
-                        .join("")}`
-                    }
+                        .join("")}`}
                 </pre>
             </code>
         </div>

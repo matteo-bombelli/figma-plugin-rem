@@ -1,12 +1,22 @@
 {
-    "compilerOptions": {
-      "target": "es6",
-      "typeRoots": [
-        "./node_modules/@types",
-        "./node_modules/@figma",
+  "compilerOptions": {
+    "target": "es6",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/@figma"
+    ],
+    "paths": {
+      "@src": [
+        "./src"
       ],
-      "jsx": "react"
+      "@components": [
+        "./src/app/components"
+      ],
+      "@app": [
+        "./src/app"
+      ]
     },
-    "allowSyntheticDefaultImports": true
-  }
-  
+    "jsx": "react"
+  },
+  "allowSyntheticDefaultImports": true
+}

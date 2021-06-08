@@ -1,13 +1,4 @@
-export const jsToCss = {
-    "fontSize":"font-size",
-    "lineHeight": "line-height",
-    "cornerRadius": "border-radius",
-    "bottomLeftRadius": "border-bottom-left-radius",
-    "bottomRightRadius": "border-bottom-right-radius",
-    "topRightRadius": "border-top-right-radius",
-    "topLeftRadius": "border-top-left-radius",
-    "strokeWeight":"border-width"
-}
+import { jsToCss } from "./../conf/basicValues"
 
 /**
  * 

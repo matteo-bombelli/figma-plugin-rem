@@ -1,0 +1,8 @@
+{
+    "intro": "Change the selection to show here the values with em unit",
+    "description": "Here are main data of the selections",
+    "change":"Change selection to show other data",
+    "ValuesAndData.id":"id: {id}",
+    "ValuesAndData.name":"name: {name}",
+    "EMPTY":""
+}

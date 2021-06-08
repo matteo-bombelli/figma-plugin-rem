@@ -1,5 +1,7 @@
-import React, {Component} from "react";
-import { ValuesAndData } from "./components/ValuesAndData/index"
+import React, {Component, Fragment} from "react";
+import { ValuesAndData } from "./components/ValuesAndData/index";
+import { intro } from "./../i18n/en.json";
+import "./MainScreen.less";
 
 export class MainScreen extends React.Component {
     state = {
@@ -34,7 +36,6 @@ export class MainScreen extends React.Component {
 
     requestValuesInEms = () => {
         try{
-            postMessage({ pluginMessage: { type: "get-em-values-for-selectedElements" } }, '*')
             parent.postMessage(
                 {
                     pluginMessage:{
@@ -51,17 +52,34 @@ export class MainScreen extends React.Component {
     render () {
         const { values } = this.state;
         return (
-            <div>
-                <div>
-                    Change the selection to show here the values with em unit
-                </div>
-                {Array.isArray(values) && values.length && (
-                    <div>
-                        {Array.isArray(values) && values.map((el, index)=>{
-                            return (
-                                <ValuesAndData {...el} key={index} />
-                            )
-                        })}
+            <div className="MainScreen">
+                {(Array.isArray(values) && values.length) ? (
+                    <div
+                        className="MainScreen_withData"
+                    >
+                        <div
+                            className="MainScreen_withData_ValuesAndData"
+                        >
+                            {Array.isArray(values) && values.map((el, index)=>{
+                                return (
+                                    <ValuesAndData 
+                                        {...el} 
+                                        key={index} 
+                                    />
+                                )
+                            })}
+                        </div>
+                        <div
+                            className="MainScreen_withData_text"
+                        >
+
+                        </div>
+                    </div>
+                ):(
+                    <div
+                        className="MainScreen_intro"
+                    >
+                        {intro}
                     </div>
                 )}
             </div>
