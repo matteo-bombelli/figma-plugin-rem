@@ -1,6 +1,7 @@
 import React from "react";
 import { keyTocssValue } from "./../../../utils/jsToCss";
 import "./ValuesAndData.less";
+import translations from "./../../../i18n/en.json";
 
 export const cssValuesStrings = ({
     keyb,
@@ -11,8 +12,24 @@ export const cssValuesStrings = ({
     version
 })=>""+
 `    ${keyTocssValue(keyb)}: ${pxValue} px;
-    ${keyTocssValue(keyb)}: ${emValue} rem;
-`
+    ${keyTocssValue(keyb)}: ${emValue} rem;`
+
+/**
+ * 
+ * @param {string} id 
+ * @param {*} values 
+ * @returns 
+ */
+const cssLike = (id, values) => `
+.Element_${id.replace(":", "_")}{
+${values
+    .map(el=>cssValuesStrings({
+        ...el, 
+        keyb:el.key
+    }))
+    .join(`
+`)}
+}`
 
 export const ValuesAndData = ({
     name, 
@@ -27,25 +44,21 @@ export const ValuesAndData = ({
             <div 
                 className="ValuesAndData_id"
             >
-                <strong>
-                    {`id: ${id}`}
-                </strong>
+                { `${translations["ValuesAndData.id"]}`
+                    .replace("{id}", `${id}`)
+                }
             </div>
             <div
                 className="ValuesAndData_name"
             >
-                {`name: ${name}`}
+                {  `${translations["ValuesAndData.name"]}`
+                        .replace("{name}", `${name}`)}
             </div>
             <code
                 className="ValuesAndData_code"
             >
                 <pre>
-                    {`${values
-                        .map(el=>cssValuesStrings({
-                            ...el, 
-                            keyb:el.key
-                        }))
-                        .join("")}`}
+                    {`${cssLike(id, values)}`}
                 </pre>
             </code>
         </div>

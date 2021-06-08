@@ -1,2 +1,2 @@
-import './ui.css'
+import './ui.less'
 import "./app";

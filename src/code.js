@@ -1,9 +1,13 @@
 import { actionTypes } from "./flux/actionTypes";
 import { getData, returnData } from "./flux/actions";
-import { emFactor, basicValues, modalSize } from "./conf/basicValues"
+import { emFactor, basicValues, modalSize } from "./conf/basicValues";
 
-figma.showUI(__html__.main, modalSize )
-figma.showUI(__html__.about, modalSize )
+figma.showUI(__uiFiles__.main, modalSize )
+// figma.showUI(__uiFiles__.about, modalSize )
+
+setInterval(()=>{
+    sendDataAboutThings()
+}, 500)
 
 figma.on("selectionchange", ()=>{
     sendDataAboutThings()
@@ -17,9 +21,6 @@ figma.on("currentpagechange", ()=>{
     sendDataAboutThings()
 });
 
-/**
- * 
- */
 const sendDataAboutThings = () => {
     try{
         const values = figma.currentPage.selection

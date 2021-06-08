@@ -1,17 +1,10 @@
 {
-    "path-intellisense.mappings": {
-        "@src": [
-            "${folder}/src"
-          ],
-          "@components":[
-            "${folder}/src/app/components"
-          ],
-          "@app":[
-            "${folder}/src/app"
-          ]
-    },
-    "path-intellisense.absolutePathToWorkspace": false,
-    "javascript.suggest.paths": false,
-    "typescript.suggest.paths": false,
-    "path-autocomplete.includeExtension": true
+  "path-intellisense.mappings": {
+    "@src": "${folder}/src",
+    "@components": "${folder}/src/app/components",
+    "@app": "${folder}/src/app"
+  },
+  "path-intellisense.absolutePathToWorkspace": false,
+  "path-intellisense.showHiddenFiles": true,
+  "path-intellisense.extensionOnImport": true
 }
